@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Спортсмены";
+}
+<h1>Список биатлонистов</h1>
+<div class=wrapper>
+    <table>
+        <thead>
+            <tr>
+                <th>Код</th>
+                <th>Наименование</th>
+                <th>Дата</th>
+                <th>Категория</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var prod in ViewBag.Products)
+            {
+                <tr>
+                    <td class="kod" onclick="window.location.href = '@(Url.Action("Product", "Products") + '/' + prod.Kod)'">@prod.Kod</td>
+                    <td class="kod" onclick="window.location.href = '@(Url.Action("Product", "Products") + '/' + prod.Kod)'">@prod.Title</td>
+                    <td class="kod" onclick="window.location.href = '@("Products/date/" + prod.Date.ToString("yyyy-MM-dd"))'">@prod.Date.ToShortDateString()</td>
+                    <td class="kod" onclick="window.location.href = '@(Url.Action("Athletes", "Products") + '/' + prod.Category)'">@prod.Category</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

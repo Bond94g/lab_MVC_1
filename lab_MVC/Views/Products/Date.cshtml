@@ -1,0 +1,6 @@
+﻿@foreach (var prod in @ViewBag.Products)
+{
+    <h1>@prod.Title</h1>
+    <p>Дата: @prod.Date.ToShortDateString()</p>
+}
+<p>Page = @ViewBag.Page</p>
